@@ -25,7 +25,7 @@
     "prettier:fix": "prettier -w .",
     "preview": "next build && next start",
     "start": "next start",
-    "sync-upstream": "git fetch && git branch | grep -Po '\\Kfeature/.*' | xargs -i sh -c 'git checkout {} && git pull upstream main && git push upstream {} --no-rebase'",
+    "sync-upstream-main": "bash -c 'git checkout $0 && git pull upstream $0 && git pull upstream main $1 && git push upstream $0'",
     "typecheck": "tsc --noEmit",
     "typegen": "next typegen"
   },
@@ -34,7 +34,7 @@
     "@fullcalendar/daygrid": "^6.1.19",
     "@fullcalendar/react": "^6.1.19",
     "@fullcalendar/timegrid": "^6.1.19",
-    "@aws-sdk/client-s3": "^3.913.0",
+    "@aws-sdk/client-s3": "^3.914.0",
     "@headlessui/react": "^2.2.9",
     "@paralleldrive/cuid2": "^2.2.2",
     "@radix-ui/react-avatar": "^1.1.10",
@@ -76,8 +76,7 @@
     "tailwindcss": "^4.1.15",
     "turbo": "^2.5.8",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.2",
-    "vercel": "^48.4.1"
+    "typescript-eslint": "^8.46.2"
   },
   "packageManager": "pnpm@10.12.1"
 }

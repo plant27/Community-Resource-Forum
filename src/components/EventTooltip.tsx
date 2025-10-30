@@ -11,6 +11,7 @@ export default function EventTooltip({ event }: EventTooltipProps) {
   const start = format(eventObj.start!, 'MMM d, yyyy h:mm a');
   const end = eventObj.end ? format(eventObj.end, 'MMM d, yyyy h:mm a') : null;
   const organizer = eventObj.extendedProps.organizer?.name || 'Unknown';
+  const tags = ["FAKE TAG 1,", "FAKE TAG 2"]
 
   return (
     <div className="w-72 overflow-hidden rounded-lg bg-white p-4 text-sm shadow-lg ring-1 ring-black ring-opacity-5">
@@ -56,6 +57,9 @@ export default function EventTooltip({ event }: EventTooltipProps) {
           <div className="flex-1">
             <p className="text-xs text-gray-500">Organizer</p>
             <p className="font-medium text-gray-900">{organizer}</p>
+            
+            <p className="text-xs text-gray-500">Tags</p>
+            <p className="font-medium text-gray-900">{tags}</p> {/*Figure out how to style this later*/}
           </div>
         </div>
         <div className="mt-4 border-t border-gray-200 pt-3">

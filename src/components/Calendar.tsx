@@ -27,6 +27,7 @@ interface CalendarEvent {
       email: string | null;
       image: string | null;
     };
+    tags: string[];
   };
 }
 

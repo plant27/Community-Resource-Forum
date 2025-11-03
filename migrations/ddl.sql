@@ -28,6 +28,7 @@ CREATE TABLE `event` (
 	`end` datetime NOT NULL,
 	`allDay` boolean NOT NULL,
 	`location` varchar(255),
+	`tags` json,
 	CONSTRAINT `event_id` PRIMARY KEY(`id`)
 );
 

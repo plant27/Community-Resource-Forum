@@ -89,7 +89,7 @@ export default function Calendar() {
             >
               <div 
                 onClick={() => {
-                  alert(eventInfo.event.extendedProps.tags);
+                  alert(eventInfo.event.extendedProps.tags.tags[0]);
                   const event = {
                     id: eventInfo.event.id,
                     title: eventInfo.event.title,
@@ -97,7 +97,8 @@ export default function Calendar() {
                     end: new Date(eventInfo.event.end!),
                     allDay: eventInfo.event.allDay,
                     location: eventInfo.event.extendedProps.location,
-                    organizerId: eventInfo.event.extendedProps.organizerId
+                    organizerId: eventInfo.event.extendedProps.organizerId,
+                    tags: eventInfo.event.extendedProps.tags
                   };
                   downloadICS(event);
                 }}

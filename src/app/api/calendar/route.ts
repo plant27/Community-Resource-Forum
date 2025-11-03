@@ -20,7 +20,8 @@ export async function GET() {
       location: event.location,
       extendedProps: {
         organizerId: event.organizerId,
-        organizer: event.profile
+        organizer: event.profile,
+        tags: event.tags
       }
     }));
 

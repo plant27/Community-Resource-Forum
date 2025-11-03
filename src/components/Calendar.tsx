@@ -27,7 +27,9 @@ interface CalendarEvent {
       email: string | null;
       image: string | null;
     };
-    tags: string[];
+    tags: {
+      tags: string[] | null;
+    };
   };
 }
 
@@ -87,6 +89,7 @@ export default function Calendar() {
             >
               <div 
                 onClick={() => {
+                  alert(eventInfo.event.extendedProps.tags);
                   const event = {
                     id: eventInfo.event.id,
                     title: eventInfo.event.title,

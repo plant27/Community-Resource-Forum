@@ -11,7 +11,8 @@ export default function EventTooltip({ event }: EventTooltipProps) {
   const start = format(eventObj.start!, 'MMM d, yyyy h:mm a');
   const end = eventObj.end ? format(eventObj.end, 'MMM d, yyyy h:mm a') : null;
   const organizer = eventObj.extendedProps.organizer?.name || 'Unknown';
-  const tags = ["FAKE TAG 1,", "FAKE TAG 2"]
+  const tags = eventObj.extendedProps.tags //|| ["none"];//["FAKE TAG 1,", "FAKE TAG 2"];
+  console.log(tags);
 
   return (
     <div className="w-72 overflow-hidden rounded-lg bg-white p-4 text-sm shadow-lg ring-1 ring-black ring-opacity-5">

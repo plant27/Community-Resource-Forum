@@ -57,11 +57,19 @@ export default function EventTooltip({ event }: EventTooltipProps) {
           <div className="flex-1">
             <p className="text-xs text-gray-500">Organizer</p>
             <p className="font-medium text-gray-900">{organizer}</p>
-            
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <svg className="h-4 w-4 text-gray-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.54944 12L3.21611 15H5.22841L5.56175 12H9.54944L9.21611 15H11.2284L11.5617 12H14.5552L14.7774 10H11.784L12.2284 6H15.2218L15.4441 4H12.4506L12.784 1H10.7717L10.4383 4H6.45064L6.78397 1H4.77166L4.43833 4H1.44431L1.22209 6H4.21611L3.77166 10H0.777642L0.55542 12H3.54944ZM5.78397 10H9.77166L10.2161 6H6.22841L5.78397 10Z" fill="currentColor"/>
+          </svg>
+          <div className="flex-1">
             <p className="text-xs text-gray-500">Tags</p>
             <p className="font-medium text-gray-900">{tags}</p> {/*Figure out how to style this later*/}
           </div>
         </div>
+        
         <div className="mt-4 border-t border-gray-200 pt-3">
           <button
             onClick={(e) => {

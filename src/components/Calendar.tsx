@@ -89,7 +89,6 @@ export default function Calendar() {
             >
               <div 
                 onClick={() => {
-                  alert(eventInfo.event.extendedProps.tags.tags[0]);
                   const event = {
                     id: eventInfo.event.id,
                     title: eventInfo.event.title,

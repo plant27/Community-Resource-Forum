@@ -2,6 +2,7 @@ import type { EventContentArg } from '@fullcalendar/core';
 import { format } from 'date-fns';
 import { downloadICS } from '~/lib/generateICS';
 
+
 interface EventTooltipProps {
   event: EventContentArg;
 }
@@ -11,7 +12,7 @@ export default function EventTooltip({ event }: EventTooltipProps) {
   const start = format(eventObj.start!, 'MMM d, yyyy h:mm a');
   const end = eventObj.end ? format(eventObj.end, 'MMM d, yyyy h:mm a') : null;
   const organizer = eventObj.extendedProps.organizer?.name || 'Unknown';
-  const tags = eventObj.extendedProps.tags?.tags //|| ["none"];//["FAKE TAG 1,", "FAKE TAG 2"];
+  const tags = eventObj.extendedProps.tags?.tags.map((tag: string) => <p>{tag} </p>) || 'None';
 
   return (
     <div className="w-72 overflow-hidden rounded-lg bg-white p-4 text-sm shadow-lg ring-1 ring-black ring-opacity-5">

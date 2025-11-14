@@ -8,7 +8,7 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import "~/styles/calendar.css";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import EventTooltip from "./EventTooltip";
 import { downloadICS } from "~/lib/generateICS";
 
@@ -35,7 +35,7 @@ interface CalendarEvent {
 
 export default function Calendar() {
   const [events, setEvents] = useState<CalendarEvent[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  //const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -45,14 +45,14 @@ export default function Calendar() {
         if (!response.ok) {
           throw new Error("Failed to fetch events");
         }
-        const data = await response.json();
+        const data: CalendarEvent[] = await response.json();
         setEvents(data);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Failed to load events");
         console.error("Error fetching events:", err);
-      } finally {
-        setIsLoading(false);
-      }
+      } //finally {
+      //setIsLoading(false);
+      //}
     };
 
     fetchEvents();
